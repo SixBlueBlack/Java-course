@@ -1,28 +1,26 @@
 package edu.hw1;
 
 public class Task5 {
-    private static final int RANK = 10;
-
     private Task5() {
     }
 
-    public static boolean isPalindrome(int number) {
-        int palindrome = number;
-        int reversedNumber = 0;
+    public static boolean isPalindrome(String number) {
+        int i1 = 0;
+        int i2 = number.length() - 1;
 
-        while (palindrome != 0) {
-            reversedNumber = reversedNumber * RANK + palindrome % RANK;
-            palindrome = palindrome / RANK;
+        while (i2 > i1) {
+            if (number.charAt(i2--) != number.charAt(i1++)) {
+                return false;
+            }
         }
-
-        return number == reversedNumber;
+        return true;
     }
 
     public static boolean isPalindromeDescendant(int number) {
         String string = String.valueOf(number);
 
         while (string.length() > 1) {
-            if (isPalindrome(Integer.parseInt(string))) {
+            if (isPalindrome(string)) {
                 return true;
             }
             var stringBuilder = new StringBuilder();

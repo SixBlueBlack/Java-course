@@ -8,7 +8,7 @@ public class Task5Test {
     @Test
     @DisplayName("IsPalindrome Func Test")
     void IsNotPalindromeTest() {
-        int number = 11211230;
+        String number = "11211230";
         boolean isNestable = Task5.isPalindrome(number);
         assertThat(isNestable).isFalse();
     }
@@ -16,7 +16,7 @@ public class Task5Test {
     @Test
     @DisplayName("IsPalindrome Func Test Even Length")
     void isPalindromeEvenLengthTest() {
-        int number = 1221;
+        String number = "1221";
         boolean isNestable = Task5.isPalindrome(number);
         assertThat(isNestable).isTrue();
     }
@@ -24,7 +24,7 @@ public class Task5Test {
     @Test
     @DisplayName("IsPalindrome Func Test Odd Length")
     void isPalindromeOddLengthTest() {
-        int number = 11211;
+        String number = "11211";
         boolean isNestable = Task5.isPalindrome(number);
         assertThat(isNestable).isTrue();
     }

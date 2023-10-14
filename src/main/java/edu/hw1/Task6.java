@@ -14,8 +14,9 @@ public class Task6 {
 
     public static int countK(int number) {
         String numberString = String.valueOf(number);
-        if (numberString.length() != NUMBER_LENGTH || number == BOUNDARY_VALUE
-            || numberString.chars().mapToObj(e -> (char) e).collect(Collectors.toSet()).size() <= 1) {
+        String firstSymbol = String.valueOf(numberString.charAt(0));
+        if (number == BOUNDARY_VALUE || numberString.length() != NUMBER_LENGTH
+            || numberString.length() - numberString.replace(firstSymbol, "").length() == NUMBER_LENGTH) {
             return -1;
         }
         int increasedOrderSorted =

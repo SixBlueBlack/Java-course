@@ -13,8 +13,7 @@ public class Task2 {
         do {
             numberAbs /= RANK;
             count++;
-        }
-        while (numberAbs > 0);
+        } while (numberAbs > 0);
         return count;
     }
 }

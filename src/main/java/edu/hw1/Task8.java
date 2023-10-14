@@ -21,8 +21,10 @@ public class Task8 {
 
     public static boolean checkKnight(int[][] board, int x, int y) {
         for (var move : KNIGHT_MOVES) {
-            if (x + move[0] < BOARD_SIZE && x + move[0] >= 0 && y + move[1] < BOARD_SIZE && y + move[1] >= 0
-                && board[x + move[0]][y + move[1]] == 1) {
+            int offsetX = x + move[0];
+            int offsetY = y + move[1];
+            if (offsetX < BOARD_SIZE && offsetX >= 0 && offsetY < BOARD_SIZE && offsetY >= 0
+                && board[offsetX][offsetY] == 1) {
                 return true;
             }
         }
