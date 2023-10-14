@@ -36,4 +36,11 @@ public class Task1Test {
         int seconds = Task1.minutesToSeconds(time);
         assertThat(seconds).isNotEqualTo(-1);
     }
+    @Test
+    @DisplayName("separator presence")
+    void separatorPresence() {
+        String time = "9959";
+        int seconds = Task1.minutesToSeconds(time);
+        assertThat(seconds).isEqualTo(-1);
+    }
 }
