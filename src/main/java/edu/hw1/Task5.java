@@ -27,8 +27,9 @@ public class Task5 {
             }
             var stringBuilder = new StringBuilder();
             for (int i = 1; i <= string.length(); i += 2) {
-                stringBuilder.append(Integer.parseInt(
-                        String.valueOf(string.charAt(i))) + Integer.parseInt(String.valueOf(string.charAt(i - 1))));
+                int number1 = Character.getNumericValue(string.charAt(i));
+                int number2 = Character.getNumericValue(string.charAt(i - 1));
+                stringBuilder.append(number1 + number2);
             }
             string = stringBuilder.toString();
         }

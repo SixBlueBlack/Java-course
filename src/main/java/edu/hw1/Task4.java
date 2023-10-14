@@ -6,19 +6,13 @@ public class Task4 {
 
     public static String fixString(String brokenString) {
         var stringBuilder = new StringBuilder();
-        String tempString = null;
 
-        for (int i = 0; i < brokenString.length(); i++) {
-            if (tempString == null) {
-                tempString = String.valueOf(brokenString.charAt(i));
-            } else {
-                stringBuilder.append(brokenString.charAt(i));
-                stringBuilder.append(tempString);
-                tempString = null;
-            }
+        for (int i = 1; i < brokenString.length(); i += 2) {
+            stringBuilder.append(brokenString.charAt(i));
+            stringBuilder.append(brokenString.charAt(i - 1));
         }
-        if (tempString != null) {
-            stringBuilder.append(tempString);
+        if (brokenString.length() % 2 == 1) {
+            stringBuilder.append(brokenString.charAt(brokenString.length() - 1));
         }
         return stringBuilder.toString();
     }

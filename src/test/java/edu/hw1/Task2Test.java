@@ -28,4 +28,11 @@ public class Task2Test {
         int countDigits = Task2.countDigits(number);
         assertThat(countDigits).isEqualTo(1);
     }
+    @Test
+    @DisplayName("input is negative")
+    void negativeInputTest() {
+        int number = -100;
+        int countDigits = Task2.countDigits(number);
+        assertThat(countDigits).isEqualTo(3);
+    }
 }

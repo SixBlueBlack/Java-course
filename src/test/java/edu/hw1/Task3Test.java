@@ -41,4 +41,12 @@ public class Task3Test {
         boolean isNestable = Task3.isNestable(firstArray, secondArray);
         assertThat(isNestable).isFalse();
     }
+    @Test
+    @DisplayName("empty arrays")
+    void emptyArraysTest() {
+        int[] firstArray = new int[] {};
+        int[] secondArray = new int[] {};
+        boolean isNestable = Task3.isNestable(firstArray, secondArray);
+        assertThat(isNestable).isFalse();
+    }
 }

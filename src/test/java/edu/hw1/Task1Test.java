@@ -28,11 +28,44 @@ public class Task1Test {
         int seconds = Task1.minutesToSeconds(time);
         assertThat(seconds).isEqualTo(-1);
     }
+
     @Test
     @DisplayName("number of minutes not limited")
     void numberOfMinutesNotLimited() {
         String time = "999:59";
         int seconds = Task1.minutesToSeconds(time);
         assertThat(seconds).isNotEqualTo(-1);
+    }
+
+    @Test
+    @DisplayName("string in input")
+    void stringInInput() {
+        String time = "01:a0";
+        int seconds = Task1.minutesToSeconds(time);
+        assertThat(seconds).isEqualTo(-1);
+    }
+
+    @Test
+    @DisplayName("negative number of seconds")
+    void negativeSeconds() {
+        String time = "01:-1";
+        int seconds = Task1.minutesToSeconds(time);
+        assertThat(seconds).isEqualTo(-1);
+    }
+
+    @Test
+    @DisplayName("negative number of minutes")
+    void negativeMinutes() {
+        String time = "-1:40";
+        int seconds = Task1.minutesToSeconds(time);
+        assertThat(seconds).isEqualTo(-1);
+    }
+
+    @Test
+    @DisplayName("several separators")
+    void severalSeparators() {
+        String time = "-1::20";
+        int seconds = Task1.minutesToSeconds(time);
+        assertThat(seconds).isEqualTo(-1);
     }
 }

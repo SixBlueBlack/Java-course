@@ -7,6 +7,18 @@ public class Task1 {
     }
 
     public static int minutesToSeconds(String time) {
+        boolean separatorPresence = false;
+        for (int i = 0; i < time.length(); i++) {
+            if (time.charAt(i) == ':') {
+                if (separatorPresence) {
+                    return -1;
+                }
+                separatorPresence = true;
+            } else if (!Character.isDigit(time.charAt(i))) {
+                return -1;
+            }
+        }
+
         String[] splittedString = time.split(":");
         int minutes = Integer.parseInt(splittedString[0]);
         int seconds = Integer.parseInt(splittedString[1]);

@@ -7,6 +7,9 @@ public class Task3 {
     }
 
     public static boolean isNestable(int[] firstArray, int[] secondArray) {
+        if (firstArray.length == 0 || secondArray.length == 0) {
+            return false;
+        }
         int min1 = Arrays.stream(firstArray).min().getAsInt();
         int max1 = Arrays.stream(firstArray).max().getAsInt();
         int min2 = Arrays.stream(secondArray).min().getAsInt();

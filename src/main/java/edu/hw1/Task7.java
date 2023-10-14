@@ -12,9 +12,7 @@ public class Task7 {
     }
 
     public static String rotateLeft(int n, int shift) {
-        String binaryString = Integer.toBinaryString(n);
-        int modShift = shift % binaryString.length();
-        String tempString = binaryString.substring(0, modShift);
-        return binaryString.substring(modShift) + tempString;
+        int binaryStringLength = Integer.toBinaryString(n).length();
+        return rotateRight(n, binaryStringLength - (shift % binaryStringLength));
     }
 }
